@@ -1,52 +1,66 @@
 {
-    const tasksList = [
-        {
-            content: "sample task 1",
-            done: true,
-        },
-    ]; 
+   const tasksList = [
+      {
+         content: "sample task 1",
+         done: true,
+      },
+   ];
 
-    const render = () => {
-        let htmlString = "";
-
-        for(const singleTask of tasksList) {
-            htmlString += `<li${singleTask.done ? " style=\"text-decoration: line-through\"" : ""}>${singleTask.content}</li>`;
-        }
-
-        document.querySelector(".js-tasksList").innerHTML = htmlString;
-    };
-
-    const addNewTask = (newTaskContent) => {
-        tasksList.push(
-            {
+   const addNewTask = (newTaskContent) => {
+      tasksList.push(
+         {
             content: newTaskContent,
             done: false,
-            }
-        );
+         }
+      );
 
-        render();
-    }
+      render();
+   };
 
-    const onFormSubmit = (event) => {
-        event.preventDefault();
+   const removeTask = (taskIndex) => {
+      tasksList.splice(taskIndex, 1);
+      render();
+   }
 
-        const newTaskContent = document.querySelector(".js-addTask").value.trim();
-        
-        if (newTaskContent === "") {
-            return;
-        } else {
-            addNewTask(newTaskContent);
-        }
+   const render = () => {
+      let htmlString = "";
 
-    }
+      for (const singleTask of tasksList) {
+         htmlString += `<li${singleTask.done ? " style=\"text-decoration: line-through\"" : ""}>
+			<button class="js-remove">x</button> ${singleTask.content}</li>`;
+      }
 
-    const init = () => {
-        render();
+      //rendering
+      document.querySelector(".js-tasksList").innerHTML = htmlString;
 
-        const form = document.querySelector(".js-form");
+      const removeButtons = document.querySelectorAll(".js-remove");
 
-        form.addEventListener("submit", onFormSubmit);
-    };
+      removeButtons.forEach((removeButton, index) => {
+         removeButton.addEventListener("click", () => {
+            removeTask(index);
+         });
+      });
+   };
 
-    init();
+   const onFormSubmit = (event) => {
+      event.preventDefault();
+
+      const newTaskContent = document.querySelector(".js-addTask").value.trim();
+
+      if (newTaskContent === "") {
+         return;
+      } else {
+         addNewTask(newTaskContent);
+      }
+   };
+
+   const init = () => {
+      render();
+
+      const form = document.querySelector(".js-form");
+
+      form.addEventListener("submit", onFormSubmit);
+   };
+
+   init();
 }
