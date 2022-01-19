@@ -53,7 +53,7 @@
          htmlString += `<li class="list__item">
 			<button class="js-done list__button">${singleTask.done ? " ✔" : ""}</button>
          <div class="list__itemContent${singleTask.done ? "--done" : ""}">${singleTask.content}</div>
-         <button class="js-remove list__button--remove">x</button></li>`;
+         <button class="js-remove list__button--remove"><img src="images/deleteBin16.png" class="list__removeIcon"></button></li>`;
       }
 
       document.querySelector(".js-tasksList").innerHTML = htmlString;
