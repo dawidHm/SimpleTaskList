@@ -20,12 +20,12 @@
 <body class="body">
 	<main class="mainWrapper">
 		<h1 class="title">Lista zadań</h1>
-		<form class="js-form">
+		<form class="js-form" id="form">
 			<section class="section__header">
 				<h2 class="section__title">Dodaj nowe zadanie</h2>
 			</section>
 			<section class="section__addTask">
-				<input class="js-addTask section__input" placeholder="Co jest do zrobienia?">
+				<input class="js-addTask section__input" type="text" name="addTaskInput" placeholder="Co jest do zrobienia?" autofocus required>
 				<button class="button">Dodaj zadanie</button>
 			</section>
 		</form>

@@ -71,6 +71,8 @@
       } else {
          addNewTask(newTaskContent);
       }
+
+      document.forms["form"].reset();
    };
 
    const init = () => {
