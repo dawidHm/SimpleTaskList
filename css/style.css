@@ -101,7 +101,7 @@ html {
 .list {
 	list-style-type: none;
 	padding: 0;
-	margin: 0;
+	margin: 15px 0 10px;
 	width:100%;
 }
 
