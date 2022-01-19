@@ -50,13 +50,12 @@
       let htmlString = "";
 
       for (const singleTask of tasksList) {
-         htmlString += `<li${singleTask.done ? " style=\"text-decoration: line-through\"" : ""}>
-			<button class="js-remove">x</button> ${singleTask.content}
-         <button class="js-done">✔</button></li>`;
-         
+         htmlString += `<li class="list__item">
+			<button class="js-done list__button">${singleTask.done ? " ✔" : ""}</button>
+         <div class="list__itemContent${singleTask.done ? "--done" : ""}">${singleTask.content}</div>
+         <button class="js-remove list__button--remove">x</button></li>`;
       }
 
-      //rendering
       document.querySelector(".js-tasksList").innerHTML = htmlString;
 
       bindEvents();

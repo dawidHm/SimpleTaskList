@@ -44,7 +44,7 @@ html {
 	margin: 12px 0;
 }
 
-.section__input {
+.section__addTask {
 	background-color: rgb(255, 255, 255);
 	padding: 15px;
 	margin: 1px 0 10px 0;
@@ -55,12 +55,12 @@ html {
 }
 
 @media (max-width: 767px) {
-	.section__input {
+	.section__addTask {
 		flex-wrap: wrap;
 	}
 }
 
-.form__field {
+.section__input {
 	border: 2px solid rgb(236, 236, 236);
 	padding: 8px;
 	color: rgb(99, 99, 99);
@@ -69,7 +69,7 @@ html {
 }
 
 @media (max-width: 767px) {
-	.form__field {
+	.section__input {
 		margin-right: 0;
 		margin-bottom: 5px;
 	}
@@ -98,8 +98,50 @@ html {
 	}
 }
 
-.section__list {
+.list {
 	list-style-type: none;
 	padding: 0;
 	margin: 0;
+	width:100%;
+}
+
+.list__item {
+	text-decoration: none;
+	border-bottom: 1px solid rgb(236, 236, 236);
+	padding: 5px;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	flex-basis:100%;
+}
+
+.list__itemContent {
+	text-decoration: none;
+	margin: 10px;
+	flex-grow:1;
+}
+
+.list__itemContent--done {
+	text-decoration: line-through;
+	margin: 10px;
+	flex-grow:1;
+}
+
+.list__button {
+	color: #fff;
+	background-color: green;
+	border: none;
+	width: 28px;
+	height: 28px;
+	flex-shrink: 0;
+}
+
+.list__button--remove {
+	color: #fff;
+	background-color: red;
+	border: none;
+	width: 28px;
+	height: 28px;
+	flex-shrink: 0;
 }
