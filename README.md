@@ -1,4 +1,4 @@
-# SimpleTaskList (alpha release - PL lang)
+# SimpleTaskList
 
 Welcome to SimpleTaskList app!
 
@@ -80,3 +80,10 @@ This happens every time you *submit a new task* with a **mouse click**, or the *
 - Add english language version
 - Add functionality to save user data
 - Add the order movement function for each task
+
+
+## Used Technology
+
+- HTML
+- CSS (with BEM and FLEX)
+- JavaScript ES6
