@@ -2,6 +2,8 @@
 
 Welcome to SimpleTaskList app!
 
+[**Caution!** This is the **early alpha release**. It is only possible to test the functionality of the application. At this stage, the application **will not save your tasks!** Once the site is *refreshed*, all assignments **will be gone**! Don't forget about it before you add tasks for the whole week!]
+
 
 ## Demo
 
@@ -21,9 +23,7 @@ Everything in one super simple shape to maximise your **effectiveness** and **pr
 
 ### Power comes out of simplicity
 
-Our app is very simple, so **it won't distract you** with a million *useless functions*, *goodies* and *blinking lights*. Just write down whatever you need to remember and it's ready. 
-
-Now you can **focus** on doing the **most important thing** without worrying about a *thousand small things to remember* that you might miss!
+The app is very simple, so **it won't distract you** with a million *useless functions*, *goodies* and *blinking lights*. Just write down whatever you need to remember, then you can **focus** on doing the **most important thing** without worrying about a *thousand small things to remember* that you might miss!
 
 
 ## App Features
