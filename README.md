@@ -23,13 +23,13 @@ Everything in one super simple shape to maximise your **effectiveness** and **pr
 
 ### Power comes out of simplicity
 
-The app is very simple, so **it won't distract you** with a million *useless functions*, *goodies* and *blinking lights*. Just write down whatever you need to remember, then you can **focus** on doing the **most important thing** without worrying about a *thousand small things to remember* that you might miss!
+The app is simple, so **it won't distract you** with a million *useless functions*, *goodies* and *blinking lights*. Just write down whatever you need to remember, then you can **focus** on doing the **most important thing** without worrying about a *thousand small things to remember* that might slip out of your head.
 
 
 ## App Features
 1. Adding new task
-1. Removing task
 1. Marking task as done
+1. Removing task
 1. **Special Feature**: Ultra fast task adding method
 
 ## 1. Adding new task
@@ -39,19 +39,21 @@ To add a new task, select the input field, then write a task name and hit the bu
 ![Adding new task gif](images/2-adding-new-task.gif)
 
 
-## 2. Removing task
-
-To remove a task, press the red bin icon placed on the right side of every task you want to remove.
-
-![Removing task gif](images/2-removing-task.gif)
-
-## 3. Marking task as done
+## 2. Marking task as done
 
 Once you've finished a task, you can mark it as done. To do this, press the green square on the left side of the task. A line through will appear on the task, and a completion mark will appear in the green square. 
 
 ![Marking task as done gif](images/3-marking-done-small.gif)
 
-You can also uncheck it as many times as you want.
+You can also uncheck and recheck it as many times as you want.
+
+
+## 3. Removing task
+
+To remove a task, press the red bin icon placed on the right side of every task you want to remove.
+
+![Removing task gif](images/2-removing-task.gif)
+
 
 ## 4. **Special Feature:** Ultra fast task adding method
 
