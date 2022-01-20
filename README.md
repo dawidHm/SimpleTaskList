@@ -19,6 +19,13 @@ https://dawidhm.github.io/SimpleTaskList/
 Everything in one super simple shape to maximise your **effectiveness** and **productivity**.
 
 
+### Power comes out of simplicity
+
+Our app is very simple, so **it won't distract you** with a million *useless functions*, *goodies* and *blinking lights*. Just write down whatever you need to remember and it's ready. 
+
+Now you can **focus** on doing the **most important thing** without worrying about a *thousand small things to remember* that you might miss!
+
+
 ## App Features
 1. Adding new tasks   
 1. Removing tasks
