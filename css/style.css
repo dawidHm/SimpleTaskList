@@ -21,46 +21,44 @@ html {
 	padding: 15px;
 }
 
-.title {
-	font-size: 27px;
-	font-weight: 900;
-}
+
 
 .section {
-	background-color: rgb(255, 255, 255);
-	padding: 15px;
-	margin: 1px 0 10px 0;
+	padding: 0;
+	box-shadow: 0 0 5px rgb(221, 221, 221);
+	min-width: 230px;
 }
 
 .section__header {
 	background-color: rgb(255, 255, 255);
-	padding: 3px 15px;
-	margin: 0;
-}
-
-.section__title {
+	padding: 15px;
+	margin-bottom: 1px;
 	font-size: 19px;
 	font-weight: 900;
-	margin: 12px 0;
 }
 
-.section__addTask {
+.section__content {
 	background-color: rgb(255, 255, 255);
 	padding: 15px;
+}
+
+
+
+
+.form {
+	background-color: rgb(255, 255, 255);
+	padding: 0;
 	margin: 1px 0 10px 0;
 	display: flex;
-	flex-direction: row;
-	justify-content: flex-start;
-	align-items: center;
 }
 
 @media (max-width: 767px) {
-	.section__addTask {
+	.form {
 		flex-wrap: wrap;
 	}
 }
 
-.section__input {
+.form__input {
 	border: 2px solid rgb(236, 236, 236);
 	padding: 8px;
 	color: rgb(99, 99, 99);
@@ -69,13 +67,13 @@ html {
 }
 
 @media (max-width: 767px) {
-	.section__input {
+	.form__input {
 		margin-right: 0;
 		margin-bottom: 5px;
 	}
 }
 
-.button {
+.form__button {
 	border: none;
 	background-color: teal;
 	color: #fff;
@@ -85,27 +83,22 @@ html {
 	min-width: 120px;
 }
 
-.button:hover {
-	background-color: hsl(180, 100%, 31%);
-	color: #fff;
-	padding: 10px;
-
-}
-
 @media (max-width: 767px) {
-	.button {
+	.form__button {
 		width: 100%;
 	}
 }
 
-.list {
+
+
+.tasksList {
 	list-style-type: none;
 	padding: 0;
 	margin: 15px 0 10px;
 	width:100%;
 }
 
-.list__item {
+.tasksList__item {
 	text-decoration: none;
 	border-bottom: 1px solid rgb(236, 236, 236);
 	padding: 5px;
@@ -117,19 +110,19 @@ html {
 	width:100%;
 }
 
-.list__itemContent {
+.tasksList__itemContent {
 	text-decoration: none;
 	margin: 10px;
 	flex-grow:1;
 }
 
-.list__itemContent--done {
+.tasksList__itemContent--done {
 	text-decoration: line-through;
 	margin: 10px;
 	flex-grow:1;
 }
 
-.list__button {
+.tasksList__button {
 	color: #fff;
 	background-color: green;
 	border: none;
@@ -138,7 +131,7 @@ html {
 	flex-shrink: 0;
 }
 
-.list__button--remove {
+.tasksList__button--remove {
 	color: #fff;
 	background-color: red;
 	border: none;
@@ -150,7 +143,7 @@ html {
 	flex-shrink: 0;
 }
 
-.list__removeIcon {
+.tasksList__removeIcon {
 	width: 14px;
 	height: 14px;
 }
