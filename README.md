@@ -72,7 +72,7 @@ After typing the task name, press **ENTER** *button* to add the task.
 
 To make adding multiple tasks *faster* and *easier*, automatic selection of an input field has been added. This means that each time you **add a new task**, the **input field selects automatically** and **input field text clears**. You can quickly *enter multiple tasks* one by one, without having to select an input field and clearing field after each task is added.
 
-This happens every time you *submit a new task* with a **mouse click**, or the **ENTER** *key*. 
+This happens every time you *submit a new task* with the **ENTER** *key*. 
 
 ![Ultra fast adding method using keyboard gif](images/4-special-feature-b.gif)
 
