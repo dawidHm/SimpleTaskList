@@ -50,10 +50,14 @@
       let htmlString = "";
 
       for (const singleTask of tasksList) {
-         htmlString += `<li class="list__item">
-			<button class="js-done list__button">${singleTask.done ? " ✔" : ""}</button>
-         <div class="list__itemContent${singleTask.done ? "--done" : ""}">${singleTask.content}</div>
-         <button class="js-remove list__button--remove"><img src="images/deleteBin16.png" class="list__removeIcon"></button></li>`;
+         htmlString += `
+         <li class="tasksList__item">
+			   <button class="js-done tasksList__button">${singleTask.done ? " ✔" : ""}</button>
+            <div class="tasksList__itemContent${singleTask.done ? "--done" : ""}">${singleTask.content}</div>
+            <button class="js-remove tasksList__button--remove">
+               <img src="images/deleteBin16.png" class="tasksList__removeIcon">
+               </button>
+         </li>`;
       }
 
       document.querySelector(".js-tasksList").innerHTML = htmlString;
