@@ -10,6 +10,9 @@
 		integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
 		crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<link href="css/style.css" rel="stylesheet">
+	<link href="css/section.css" rel="stylesheet">
+	<link href="css/form.css" rel="stylesheet">
+	<link href="css/taskslist.css" rel="stylesheet">
 	<script defer src="js/script.js"></script>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,21 +22,24 @@
 
 <body class="body">
 	<main class="mainWrapper">
-		<h1 class="title">Lista zadań</h1>
-		<form class="js-form" id="form">
-			<section class="section__header">
-				<h2 class="section__title">Dodaj nowe zadanie</h2>
-			</section>
-			<section class="section__addTask">
-				<input class="js-addTask section__input" type="text" name="addTaskInput" placeholder="Co jest do zrobienia?" autofocus required>
-				<button class="button">Dodaj zadanie</button>
-			</section>
-		</form>
-		<section class="section__header">
-			<h2 class="section__title">Lista zadań</h2>
+		<header>
+			<h1>Lista zadań</h1>
+		</header>
+
+		<section class="section">
+			<h2 class="section__header">Dodaj nowe zadanie</h2>
+			<div class="section__content">
+				<form class="js-form form" id="form">
+					<input class="js-addTask form__input" type="text" name="addTaskInput" placeholder="Co jest do zrobienia?" autofocus required>
+					<button class="form__button">Dodaj zadanie</button>
+				</form>
+			</div>
 		</section>
 		<section class="section">
-			<ul class="js-tasksList list"></ul>
+			<h2 class="section__header">Lista zadań</h2>
+			<div class="section__content">
+				<ul class="js-tasksList tasksList"></ul>
+			</div>
 		</section>
 	</main>
 </body>
