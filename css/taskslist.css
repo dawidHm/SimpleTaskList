@@ -27,7 +27,7 @@
 
 .tasksList__button {
 	color: #fff;
-	background-color: green;
+	background-color: hsl(120, 100%, 25%);
 	border: none;
 	width: 28px;
 	height: 28px;
@@ -35,6 +35,10 @@
 
 .tasksList__button:hover {
 	background-color: hsl(120, 100%, 28%);
+}
+
+.tasksList__button:active {
+	background-color: hsl(120, 100%, 33%);
 }
 
 .tasksList__button--remove {
@@ -48,6 +52,10 @@
 
 .tasksList__button--remove:hover {
 	background-color: hsl(0, 100%, 60%);
+}
+
+.tasksList__button--remove:active {
+	background-color: hsl(0, 100%, 70%);
 }
 
 .tasksList__removeIcon {
