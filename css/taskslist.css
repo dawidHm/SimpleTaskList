@@ -1,44 +1,45 @@
 .tasksList {
 	list-style-type: none;
 	padding: 0;
-	margin: 5px 0 10px;
+	margin: 0;
 	width: 100%;
 }
 
 .tasksList__item {
 	text-decoration: none;
 	border-bottom: 1px solid rgb(236, 236, 236);
-	padding: 15px;
-	width: 100%;
+	padding: 10px;
 	display: grid;
-	grid-template-columns: 30px 1fr 30px;
+	grid-template-columns: auto 1fr auto;
 	align-items: center;
 	grid-gap: 10px;
 }
 
 .tasksList__itemContent {
 	text-decoration: none;
-	margin: 10px;
+	margin: 5px;
 }
 
 .tasksList__itemContent--done {
 	text-decoration: line-through;
-	margin: 10px;
 }
 
 .tasksList__button {
 	color: #fff;
-	background-color: hsl(120, 100%, 25%);
 	border: none;
 	width: 28px;
 	height: 28px;
 }
 
-.tasksList__button:hover {
+.tasksList__button--toggleDone {
+	background-color: hsl(120, 100%, 25%);
+}
+
+.tasksList__button--toggleDone:hover {
 	background-color: hsl(120, 100%, 28%);
 }
 
-.tasksList__button:active {
+.tasksList__button--toggleDone:active {
 	background-color: hsl(120, 100%, 33%);
 }
 
@@ -46,8 +47,6 @@
 	color: #fff;
 	background-color: red;
 	border: none;
-	width: 28px;
-	height: 28px;
 	justify-self: end;
 }
 
