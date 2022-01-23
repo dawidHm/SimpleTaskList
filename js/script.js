@@ -49,11 +49,13 @@
       for (const singleTask of tasksList) {
          htmlString += `
          <li class="tasksList__item">
-			   <button class="js-done tasksList__button">${singleTask.done ? " ✔" : ""}</button>
-            <div class="tasksList__itemContent${singleTask.done ? "--done" : ""}">${singleTask.content}</div>
-            <button class="js-remove tasksList__button--remove">
+			   <button class="tasksList__button tasksList__button--done js-done">
+               ${singleTask.done ? " ✔" : ""}
+            </button>
+            <div class="tasksList__itemContent tasksList__itemContent${singleTask.done ? "--done" : ""}">${singleTask.content}</div>
+            <button class="tasksList__button tasksList__button--remove js-remove">
                <img src="images/deleteBin16.png" class="tasksList__removeIcon">
-               </button>
+            </button>
          </li>`;
       }
 
