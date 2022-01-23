@@ -7,9 +7,12 @@ Welcome to SimpleTaskList app!
 
 ## Demo
 
-*(English version coming soon)*
-
+(Polish language)
 https://dawidhm.github.io/SimpleTaskList/
+
+(English language)
+https://dawidhm.github.io/SimpleTaskList/index-en.html
+
 
 ![SimpleTaskList App Image](images/1-simpleTaskList.jpg)
 
@@ -79,13 +82,12 @@ This happens every time you *submit a new task* with the **ENTER** *key*.
 
 ## Future Plans
 
-- Add english language version
 - Add functionality to save user data
 - Add the order movement function for each task
 
 
 ## Used Technology
 
-- HTML
-- CSS (with BEM and FLEX)
-- JavaScript ES6
+- HTML 5
+- CSS (with BEM, FLEX and GRID)
+- JavaScript ES6+
