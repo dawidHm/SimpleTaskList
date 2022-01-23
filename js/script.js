@@ -44,12 +44,12 @@
    }
 
    const render = () => {
-      let htmlString = "";
+      let taskListHTMLContent = "";
 
       for (const singleTask of tasksList) {
-         htmlString += `
+         taskListHTMLContent += `
          <li class="tasksList__item">
-			   <button class="tasksList__button tasksList__button--done js-done">
+			   <button class="tasksList__button tasksList__button--toggleDone js-done">
                ${singleTask.done ? " ✔" : ""}
             </button>
             <div class="tasksList__itemContent tasksList__itemContent${singleTask.done ? "--done" : ""}">${singleTask.content}</div>
@@ -59,7 +59,7 @@
          </li>`;
       }
 
-      document.querySelector(".js-tasksList").innerHTML = htmlString;
+      document.querySelector(".js-tasksList").innerHTML = taskListHTMLContent;
 
       bindEvents();
    };
