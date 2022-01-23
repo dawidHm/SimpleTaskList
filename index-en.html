@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>SimpleTaskList</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+		integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link href="css/style.css" rel="stylesheet">
+	<link href="css/section.css" rel="stylesheet">
+	<link href="css/form.css" rel="stylesheet">
+	<link href="css/taskslist.css" rel="stylesheet">
+	<script defer src="js/script.js"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="body">
+	<main class="mainWrapper">
+		<header>
+			<h1>Simple Task List</h1>
+		</header>
+
+		<section class="section">
+			<h2 class="section__header">Add new task</h2>
+			<div class="section__content">
+				<form class="js-form form" id="form">
+					<input class="js-addTask form__input" type="text" name="addTaskInput" placeholder="What must be done?" autofocus required>
+					<button class="form__button">Add task</button>
+				</form>
+			</div>
+		</section>
+		<section class="section">
+			<h2 class="section__header">Task List</h2>
+			<div class="section__content">
+				<ul class="js-tasksList tasksList"></ul>
+			</div>
+		</section>
+	</main>
+</body>
+
+</html>
