@@ -1,18 +1,19 @@
 .tasksList {
 	list-style-type: none;
 	padding: 0;
-	margin: 15px 0 10px;
+	margin: 5px 0 10px;
 	width: 100%;
 }
 
 .tasksList__item {
 	text-decoration: none;
 	border-bottom: 1px solid rgb(236, 236, 236);
-	padding: 5px;
+	padding: 15px;
 	width: 100%;
 	display: grid;
 	grid-template-columns: 30px 1fr 30px;
 	align-items: center;
+	grid-gap: 10px;
 }
 
 .tasksList__itemContent {
