@@ -15,6 +15,10 @@
 	grid-gap: 10px;
 }
 
+.tasksList__item--hidden {
+	display: none;
+}
+
 .tasksList__itemContent {
 	text-decoration: none;
 	margin: 5px;
