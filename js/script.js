@@ -17,12 +17,12 @@
    const removeTask = (taskIndex) => {
       tasksList.splice(taskIndex, 1);
       render();
-   }
+   };
 
    const toggleTaskDone = (taskIndex) => {
       tasksList[taskIndex].done = !tasksList[taskIndex].done;
       render();
-   }
+   };
 
    const bindEvents = () => {
       const removeButtons = document.querySelectorAll(".js-remove");
@@ -41,9 +41,9 @@
          });
       });
 
-   }
+   };
 
-   const render = () => {
+   const renderTasks = () => {
       let taskListHTMLContent = "";
 
       for (const singleTask of tasksList) {
@@ -60,6 +60,36 @@
       }
 
       document.querySelector(".js-tasksList").innerHTML = taskListHTMLContent;
+   };
+
+
+
+   // tasksListIsEmpty ?
+   const hideFilterButtons = () => {
+      if (!tasksList || !tasksList.length) {
+         return true;
+      }
+      return false;
+   };
+
+   const renderButtons = () => {
+      let filterButtonsHTMLContent = "";
+
+      if (hideFilterButtons()) {
+         filterButtonsHTMLContent += ``;
+         document.querySelector(".js-filterButtons").innerHTML = filterButtonsHTMLContent;
+         return;
+      }
+      filterButtonsHTMLContent += `
+             <button class="section__filterButton">Ukryj ukończone</button>
+             <button class="section__filterButton">Ukończ wszystkie</button>`;
+
+      document.querySelector(".js-filterButtons").innerHTML = filterButtonsHTMLContent;
+   };
+
+   const render = () => {
+      renderTasks();
+      renderButtons();
 
       bindEvents();
    };
@@ -69,7 +99,7 @@
 
       const addNewTaskElement = document.querySelector(".js-addNewTask");
       const newTaskContent = addNewTaskElement.value.trim();
- 
+
       if (newTaskContent === "") {
          addNewTaskElement.focus();
       } else {
