@@ -29,6 +29,7 @@
 	border: none;
 	width: 28px;
 	height: 28px;
+	transition: 0.5s;
 }
 
 .tasksList__button--toggleDone {
@@ -36,11 +37,11 @@
 }
 
 .tasksList__button--toggleDone:hover {
-	background-color: hsl(120, 100%, 28%);
+	background-color: hsl(120, 100%, 30%);
 }
 
 .tasksList__button--toggleDone:active {
-	background-color: hsl(120, 100%, 33%);
+	background-color: hsl(120, 100%, 35%);
 }
 
 .tasksList__button--remove {
@@ -51,11 +52,11 @@
 }
 
 .tasksList__button--remove:hover {
-	background-color: hsl(0, 100%, 60%);
+	background-color: hsl(0, 100%, 65%);
 }
 
 .tasksList__button--remove:active {
-	background-color: hsl(0, 100%, 70%);
+	background-color: hsl(0, 100%, 75%);
 }
 
 .tasksList__removeIcon {
