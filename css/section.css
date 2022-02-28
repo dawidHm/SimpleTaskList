@@ -59,9 +59,9 @@
 	color: rgb(202, 202, 202);
 }
 
-/* .section__filterButton:hover {
-
-} */
+.section__filterButton:hover {
+	color: hsl(192, 27%, 68%);
+}
 
 .section__filterButton:active {
 	color: peru;
