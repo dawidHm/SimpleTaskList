@@ -55,6 +55,18 @@
 	color: hsl(192, 27%, 48%);
 }
 
+.section__filterButton--disabled {
+	color: rgb(202, 202, 202);
+}
+
+/* .section__filterButton:hover {
+
+} */
+
+.section__filterButton:active {
+	color: peru;
+}
+
 .section__content {
 	background-color: rgb(255, 255, 255);
 	padding: 15px;
