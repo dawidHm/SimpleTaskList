@@ -1,9 +1,9 @@
 {
-   let tasksList = [
+   let tasksList = [];
 
-   ];
-
+   let doneAllTasks = false;
    let hideDoneTasks = false;
+
 
    const addNewTask = (newTaskContent) => {
       tasksList = [
@@ -20,7 +20,7 @@
    };
 
    const toggleTaskDone = (taskIndex) => {
-      // tasksList = tasks.map
+
       tasksList[taskIndex].done = !tasksList[taskIndex].done;
       render();
    };
@@ -36,16 +36,22 @@
 
    const checkIfAllDone = () => {
       if(!tasksList || !tasksList.length) {
-         hideDoneTasks = false;
+         doneAllTasks = false;
       } else {
-         hideDoneTasks = true;
+         doneAllTasks = true;
       }
       
       tasksList.forEach((task) => {
          if(!task.done) {
-            hideDoneTasks = false;
+            doneAllTasks = false;
          }
       })
+   };
+
+   const toggleHideDoneTasks = () => {
+      hideDoneTasks = !hideDoneTasks;
+   
+      render();
    };
 
    const bindEvents = () => {
@@ -72,6 +78,14 @@
             allTasksDone(index);
          });
       });
+
+      const toggleHideAllDone = document.querySelectorAll(".js-hideAllDoneButton");
+
+      toggleHideAllDone.forEach((hideAllDoneButton, index) => {
+         hideAllDoneButton.addEventListener("click", () => {
+            toggleHideDoneTasks(index);
+         });
+      });
       
    };
 
@@ -80,7 +94,7 @@
 
       for (const singleTask of tasksList) {
          taskListHTMLContent += `
-         <li class="tasksList__item">
+         <li class="tasksList__item${(singleTask.done && hideDoneTasks) ? "--hidden" : ""}">
                <button class="tasksList__button tasksList__button--toggleDone js-done">
                ${singleTask.done ? " ✔" : ""}
             </button>
@@ -113,8 +127,8 @@
       }
 
       filterButtonsHTMLContent += `
-             <button class="section__filterButton js-hideAllDoneButton">Ukryj ukończone</button>
-             <button class="section__filterButton ${hideDoneTasks ? "section__filterButton--disabled" : ""} js-doneAllButton" ${hideDoneTasks ? "disabled" : ""}>Ukończ wszystkie</button>`;
+             <button class="section__filterButton js-hideAllDoneButton">${hideDoneTasks ? "Pokaż ukończone" : "Ukryj ukończone"}</button>
+             <button class="section__filterButton ${doneAllTasks ? "section__filterButton--disabled" : ""} js-doneAllButton" ${doneAllTasks ? "disabled" : ""}>Ukończ wszystkie</button>`;
 
       document.querySelector(".js-filterButtons").innerHTML = filterButtonsHTMLContent;
    };
