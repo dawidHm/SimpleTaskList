@@ -3,6 +3,8 @@
 
    ];
 
+   let hideDoneTasks = false;
+
    const addNewTask = (newTaskContent) => {
       tasksList.push(
          {
@@ -48,7 +50,7 @@
 
       for (const singleTask of tasksList) {
          taskListHTMLContent += `
-         <li class="tasksList__item">
+         <li class="tasksList__item${hideDoneTasks ? " tasksList__item--hidden" : ""} js-tasks-item">
 			   <button class="tasksList__button tasksList__button--toggleDone js-done">
                ${singleTask.done ? " ✔" : ""}
             </button>
@@ -60,9 +62,8 @@
       }
 
       document.querySelector(".js-tasksList").innerHTML = taskListHTMLContent;
+
    };
-
-
 
    // tasksListIsEmpty ?
    const hideFilterButtons = () => {
@@ -72,27 +73,55 @@
       return false;
    };
 
+
    const renderButtons = () => {
       let filterButtonsHTMLContent = "";
 
       if (hideFilterButtons()) {
-         filterButtonsHTMLContent += ``;
          document.querySelector(".js-filterButtons").innerHTML = filterButtonsHTMLContent;
-         return;
+         return true;
       }
       filterButtonsHTMLContent += `
-             <button class="section__filterButton">Ukryj ukończone</button>
-             <button class="section__filterButton">Ukończ wszystkie</button>`;
+         <button class="section__filterButton js-hideDoneButton">Ukryj ukończone</button>
+         <button class="section__filterButton js-doneAllButton">Ukończ wszystkie</button>`;
 
       document.querySelector(".js-filterButtons").innerHTML = filterButtonsHTMLContent;
+
+   };
+
+
+
+   const bindButtonsEvents = () => {
+      const hideDoneButton = document.querySelector(".js-hideDoneButton");
+      const singleTaskElement = document.querySelector(".js-tasksItem");
+
+
+      if (!hideFilterButtons()) {
+         hideDoneButton.addEventListener("click", () => {
+            if (hideDoneTasks === false) {
+               hideDoneTasks = true;
+               console.log(`hideDoneTasks = ${hideDoneTasks}`)
+            } else {
+               hideDoneTasks = false;
+               console.log(`hideDoneTasks = ${hideDoneTasks}`)
+            }
+         })
+
+      }
+
+
+
    };
 
    const render = () => {
       renderTasks();
       renderButtons();
 
+      bindButtonsEvents();
       bindEvents();
    };
+
+
 
    const onFormSubmit = (event) => {
       event.preventDefault();
