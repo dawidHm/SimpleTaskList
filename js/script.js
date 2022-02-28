@@ -1,18 +1,16 @@
 {
-   const tasksList = [
+   let tasksList = [
 
    ];
 
    let hideDoneTasks = false;
 
    const addNewTask = (newTaskContent) => {
-      tasksList.push(
-         {
-            content: newTaskContent,
-            done: false,
-         }
-      );
-
+      tasksList = [
+         ...tasksList,
+         { content: newTaskContent, done: false },
+      ];
+      
       render();
    };
 
@@ -22,8 +20,32 @@
    };
 
    const toggleTaskDone = (taskIndex) => {
+      // tasksList = tasks.map
       tasksList[taskIndex].done = !tasksList[taskIndex].done;
       render();
+   };
+
+   const allTasksDone = () => {
+      tasksList = tasksList.map((task) => ({
+         ...task,
+         done: true,
+      }));
+      
+      render();
+   };
+
+   const checkIfAllDone = () => {
+      if(!tasksList || !tasksList.length) {
+         hideDoneTasks = false;
+      } else {
+         hideDoneTasks = true;
+      }
+      
+      tasksList.forEach((task) => {
+         if(!task.done) {
+            hideDoneTasks = false;
+         }
+      })
    };
 
    const bindEvents = () => {
@@ -43,6 +65,14 @@
          });
       });
 
+      const doneAllButton = document.querySelectorAll(".js-doneAllButton")
+
+      doneAllButton.forEach((doneAll, index) => {
+         doneAll.addEventListener("click", () => {
+            allTasksDone(index);
+         });
+      });
+      
    };
 
    const renderTasks = () => {
@@ -50,8 +80,8 @@
 
       for (const singleTask of tasksList) {
          taskListHTMLContent += `
-         <li class="tasksList__item${hideDoneTasks ? " tasksList__item--hidden" : ""} js-tasks-item">
-			   <button class="tasksList__button tasksList__button--toggleDone js-done">
+         <li class="tasksList__item">
+               <button class="tasksList__button tasksList__button--toggleDone js-done">
                ${singleTask.done ? " ✔" : ""}
             </button>
             <div class="tasksList__itemContent tasksList__itemContent${singleTask.done ? "--done" : ""}">${singleTask.content}</div>
@@ -62,66 +92,39 @@
       }
 
       document.querySelector(".js-tasksList").innerHTML = taskListHTMLContent;
-
    };
-
-   // tasksListIsEmpty ?
-   const hideFilterButtons = () => {
-      if (!tasksList || !tasksList.length) {
-         return true;
-      }
-      return false;
-   };
-
 
    const renderButtons = () => {
+      checkIfAllDone();
+      
+      // tasksListIsEmpty ?
+      const hideFilterButtons = () => {
+         if (!tasksList || !tasksList.length) {
+            return true;
+         }
+      };
+
       let filterButtonsHTMLContent = "";
 
       if (hideFilterButtons()) {
+         filterButtonsHTMLContent += ``;
          document.querySelector(".js-filterButtons").innerHTML = filterButtonsHTMLContent;
-         return true;
+         return;
       }
+
       filterButtonsHTMLContent += `
-         <button class="section__filterButton js-hideDoneButton">Ukryj ukończone</button>
-         <button class="section__filterButton js-doneAllButton">Ukończ wszystkie</button>`;
+             <button class="section__filterButton js-hideAllDoneButton">Ukryj ukończone</button>
+             <button class="section__filterButton ${hideDoneTasks ? "section__filterButton--disabled" : ""} js-doneAllButton" ${hideDoneTasks ? "disabled" : ""}>Ukończ wszystkie</button>`;
 
       document.querySelector(".js-filterButtons").innerHTML = filterButtonsHTMLContent;
-
-   };
-
-
-
-   const bindButtonsEvents = () => {
-      const hideDoneButton = document.querySelector(".js-hideDoneButton");
-      const singleTaskElement = document.querySelector(".js-tasksItem");
-
-
-      if (!hideFilterButtons()) {
-         hideDoneButton.addEventListener("click", () => {
-            if (hideDoneTasks === false) {
-               hideDoneTasks = true;
-               console.log(`hideDoneTasks = ${hideDoneTasks}`)
-            } else {
-               hideDoneTasks = false;
-               console.log(`hideDoneTasks = ${hideDoneTasks}`)
-            }
-         })
-
-      }
-
-
-
    };
 
    const render = () => {
       renderTasks();
       renderButtons();
 
-      bindButtonsEvents();
       bindEvents();
    };
-
-
 
    const onFormSubmit = (event) => {
       event.preventDefault();
