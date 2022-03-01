@@ -13,7 +13,7 @@
 	<link href="css/section.css" rel="stylesheet">
 	<link href="css/form.css" rel="stylesheet">
 	<link href="css/taskslist.css" rel="stylesheet">
-	<script defer src="js/script.js"></script>
+	<script defer src="js/script-en.js"></script>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
@@ -30,15 +30,18 @@
 			<h2 class="section__header">Add new task</h2>
 			<div class="section__content">
 				<form class="js-form form" id="form">
-					<input class="js-addTask form__input" type="text" name="addTaskInput" placeholder="What must be done?" autofocus required>
+					<input class="form__input js-addNewTask"  type="text" name="addTaskInput" placeholder="What must be done?">
 					<button class="form__button">Add task</button>
 				</form>
 			</div>
 		</section>
 		<section class="section">
-			<h2 class="section__header">Task List</h2>
+			<div class="section__header">
+				<h2 class="section__headerTitle">Task List</h2>
+				<div class="section__filterButtonsContainer js-filterButtons"></div>
+			</div>
 			<div class="section__content">
-				<ul class="js-tasksList tasksList"></ul>
+				<ul class="tasksList js-tasksList"></ul>
 			</div>
 		</section>
 	</main>
