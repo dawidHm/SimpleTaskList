@@ -4,7 +4,6 @@
    let doneAllTasks = false;
    let hideDoneTasks = false;
 
-
    const addNewTask = (newTaskContent) => {
       tasksList = [
          ...tasksList,
@@ -15,13 +14,17 @@
    };
 
    const removeTask = (taskIndex) => {
-      tasksList.splice(taskIndex, 1);
+      tasksList = [
+         ...tasksList.slice(0, taskIndex), 
+         ...tasksList.slice(taskIndex + 1),
+      ];
+
       render();
    };
 
    const toggleTaskDone = (taskIndex) => {
-
       tasksList[taskIndex].done = !tasksList[taskIndex].done;
+
       render();
    };
 
