@@ -73,16 +73,16 @@ To remove a task, press the red bin icon placed on the right side of every task 
 
 ## 6. **Special Feature:** Ultra fast task adding methods.
 
-### **App can be used with just the keyboard**. 
+### **SimpleTaskList can be also used with the keyboard only**. 
 
-You can easily switch between fields and buttons using *keyboard buttons combination*:
+You can easily switch between fields and buttons using *keyboard combinations*:
 
 - forwards → with the **TAB** *button* 
 - and backwards ← with the **SHIFT + TAB** 
 
 ![Ultra fast adding method using keyboard gif](screenshots/specialFeature-a.gif)
 
-After typing the task name, press **ENTER** *button* to add the task.
+After typing the task name, press **ENTER** *key* to add the task.
 
 ## **Auto-focus** and **input field reset**.
 
