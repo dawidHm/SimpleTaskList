@@ -9,13 +9,13 @@
          ...tasksList,
          { content: newTaskContent, done: false },
       ];
-      
+
       render();
    };
 
    const removeTask = (taskIndex) => {
       tasksList = [
-         ...tasksList.slice(0, taskIndex), 
+         ...tasksList.slice(0, taskIndex),
          ...tasksList.slice(taskIndex + 1),
       ];
 
@@ -23,7 +23,11 @@
    };
 
    const toggleTaskDone = (taskIndex) => {
-      tasksList[taskIndex].done = !tasksList[taskIndex].done;
+      tasksList = [
+         ...tasksList.slice(0, taskIndex),
+         { ...tasksList[taskIndex], done: !tasksList[taskIndex].done },
+         ...tasksList.slice(taskIndex + 1),
+      ];
 
       render();
    };
@@ -33,19 +37,19 @@
          ...task,
          done: true,
       }));
-      
+
       render();
    };
 
    const checkIfAllDone = () => {
-      if(!tasksList || !tasksList.length) {
+      if (!tasksList || !tasksList.length) {
          doneAllTasks = false;
       } else {
          doneAllTasks = true;
       }
-      
+
       tasksList.forEach((task) => {
-         if(!task.done) {
+         if (!task.done) {
             doneAllTasks = false;
          }
       })
@@ -53,7 +57,7 @@
 
    const toggleHideDoneTasks = () => {
       hideDoneTasks = !hideDoneTasks;
-   
+
       render();
    };
 
@@ -89,7 +93,7 @@
             toggleHideDoneTasks(index);
          });
       });
-      
+
    };
 
    const renderTasks = () => {
@@ -113,7 +117,7 @@
 
    const renderButtons = () => {
       checkIfAllDone();
-      
+
       // tasksListIsEmpty ?
       const hideFilterButtons = () => {
          if (!tasksList || !tasksList.length) {
