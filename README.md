@@ -7,14 +7,14 @@ Welcome to SimpleTaskList app!
 
 ## Demo
 
-(Polish language)
+(PL)
 https://dawidhm.github.io/SimpleTaskList/
 
-(English language)
+(ENG)
 https://dawidhm.github.io/SimpleTaskList/index-en.html
 
 
-![SimpleTaskList App Image](images/1-simpleTaskList.jpg)
+![SimpleTaskList App Image](screenshots/1-simpleTaskList.jpg)
 
 
 ## Description
@@ -32,52 +32,67 @@ The app is simple, so **it won't distract you** with a million *useless function
 ## App Features
 1. Adding new task
 1. Marking task as done
+1. Marking all tasks as done
+1. Hiding done tasks
 1. Removing task
-1. **Special Feature**: Ultra fast task adding method
+1. **Special Feature**: Ultra fast task adding methods
 
-## 1. Adding new task
+## 1. Adding new task.
 
 To add a new task, select the input field, then write a task name and hit the button to add the task.
 
-![Adding new task gif](images/2-adding-new-task.gif)
+![Adding new task gif](screenshots/addingNewTask.gif)
 
 
-## 2. Marking task as done
+## 2. Marking task as done.
 
 Once you've finished a task, you can mark it as done. To do this, press the green square on the left side of the task. A line through will appear on the task, and a completion mark will appear in the green square. 
 
-![Marking task as done gif](images/3-marking-done-small.gif)
+![Marking task as done gif](screenshots/markSingleDone.gif)
 
 You can also uncheck and recheck it as many times as you want.
 
+## 3. (**New Feature**) Marking all tasks as done.
 
-## 3. Removing task
+Now you can mark all completed tasks as completed with just one click.
+
+![Marking all tasks as done gif](screenshots/markAllDone.gif)
+
+## 4. (**New Feature**)  Hiding done tasks.
+
+Another new feature is hiding completed tasks.
+
+![Marking all tasks as done gif](screenshots/hideDoneTasks.gif)
+
+## 5. Removing task.
 
 To remove a task, press the red bin icon placed on the right side of every task you want to remove.
 
-![Removing task gif](images/2-removing-task.gif)
+![Removing task gif](screenshots/removeTasks.gif)
 
 
-## 4. **Special Feature:** Ultra fast task adding method
+## 6. **Special Feature:** Ultra fast task adding methods.
 
 ### **App can be used with just the keyboard**. 
 
-The currently chosen item has a **black border**. You can easily switch between fields and buttons:
+You can easily switch between fields and buttons using *keyboard buttons combination*:
 
-- forwards with the **TAB** *button* 
-- and backwards with the **SHIFT + TAB** *buttons combination*
+- forwards → with the **TAB** *button* 
+- and backwards ← with the **SHIFT + TAB** 
+
+![Ultra fast adding method using keyboard gif](screenshots/specialFeature-a.gif)
 
 After typing the task name, press **ENTER** *button* to add the task.
 
-![Ultra fast adding method using keyboard gif](images/4-special-feature-a.gif)
+## **Auto-focus** and **input field reset**.
 
-### **Auto-focus and input field reset**
+To make adding multiple tasks *faster* and *easier*, automatic selection of an input field has been added. This means that each time you **add a new task**, the **input field selects automatically** and **input field text clears**. 
 
-To make adding multiple tasks *faster* and *easier*, automatic selection of an input field has been added. This means that each time you **add a new task**, the **input field selects automatically** and **input field text clears**. You can quickly *enter multiple tasks* one by one, without having to select an input field and clearing field after each task is added.
+You can quickly *enter multiple tasks* one by one, without having to select an input field and clearing field after each task is added.
 
-This happens every time you *submit a new task* with the **ENTER** *key*. 
+To make this work *submit a new task* with the **ENTER** *key*. 
 
-![Ultra fast adding method using keyboard gif](images/4-special-feature-b.gif)
+![Ultra fast adding method using keyboard gif](screenshots/specialFeature-b.gif)
 
 
 ## Future Plans
