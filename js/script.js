@@ -1,7 +1,6 @@
 {
    let tasksList = [];
 
-   let doneAllTasks = false;
    let hideDoneTasks = false;
 
    const addNewTask = (newTaskContent) => {
@@ -39,20 +38,6 @@
       }));
 
       render();
-   };
-
-   const checkIfAllDone = () => {
-      if (!tasksList || !tasksList.length) {
-         doneAllTasks = false;
-      } else {
-         doneAllTasks = true;
-      }
-
-      tasksList.forEach((task) => {
-         if (!task.done) {
-            doneAllTasks = false;
-         }
-      })
    };
 
    const toggleHideDoneTasks = () => {
@@ -102,13 +87,11 @@
       for (const singleTask of tasksList) {
          taskListHTMLContent += `
          <li class="tasksList__item${(singleTask.done && hideDoneTasks) ? "--hidden" : ""}">
-               <button class="tasksList__button tasksList__button--toggleDone js-done">
+            <button class="tasksList__button tasksList__button--toggleDone js-done">
                ${singleTask.done ? " ✔" : ""}
             </button>
             <div class="tasksList__itemContent tasksList__itemContent${singleTask.done ? "--done" : ""}">${singleTask.content}</div>
-            <button class="tasksList__button tasksList__button--remove js-remove">
-               <img src="images/deleteBin16.png" class="tasksList__removeIcon">
-            </button>
+            <button class="tasksList__button tasksList__button--remove js-remove">🗑</button>
          </li>`;
       }
 
@@ -116,8 +99,6 @@
    };
 
    const renderButtons = () => {
-      checkIfAllDone();
-
       // tasksListIsEmpty ?
       const hideFilterButtons = () => {
          if (!tasksList || !tasksList.length) {
@@ -135,7 +116,7 @@
 
       filterButtonsHTMLContent += `
              <button class="section__filterButton js-hideAllDoneButton">${hideDoneTasks ? "Pokaż ukończone" : "Ukryj ukończone"}</button>
-             <button class="section__filterButton ${doneAllTasks ? "section__filterButton--disabled" : ""} js-doneAllButton" ${doneAllTasks ? "disabled" : ""}>Ukończ wszystkie</button>`;
+             <button class="section__filterButton js-doneAllButton" ${tasksList.every(({ done }) => done) ? "disabled" : ""}>Ukończ wszystkie</button>`;
 
       document.querySelector(".js-filterButtons").innerHTML = filterButtonsHTMLContent;
    };
