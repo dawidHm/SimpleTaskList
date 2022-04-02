@@ -56,10 +56,12 @@
 
 .section__filterButton:hover {
 	color: hsl(192, 27%, 50%);
+	transition: 0.5s;
 }
 
 .section__filterButton:active {
 	color: peru;
+	transition: 0.5s;
 }
 
 .section__filterButton:disabled {
