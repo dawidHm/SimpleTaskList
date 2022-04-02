@@ -52,19 +52,18 @@
 	margin: 0;
 	font-size: 16px;
 	font-weight: 300;
-	color: hsl(192, 27%, 48%);
-}
-
-.section__filterButton--disabled {
-	color: rgb(202, 202, 202);
 }
 
 .section__filterButton:hover {
-	color: hsl(192, 27%, 68%);
+	color: hsl(192, 27%, 50%);
 }
 
 .section__filterButton:active {
 	color: peru;
+}
+
+.section__filterButton:disabled {
+	color: hsl(192, 27%, 78%);
 }
 
 .section__content {
