@@ -71,7 +71,7 @@ To remove a task, press the red bin icon placed on the right side of every task 
 ![Removing task gif](screenshots/removeTasks.gif)
 
 
-## 6. **Special Feature:** Ultra fast task adding methods.
+## 6. **(Special Feature)** Ultra fast task adding methods.
 
 ### **SimpleTaskList can be also used with the keyboard only**. 
 
