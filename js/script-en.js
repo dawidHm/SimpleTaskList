@@ -1,7 +1,6 @@
 {
    let tasksList = [];
 
-   let doneAllTasks = false;
    let hideDoneTasks = false;
 
    const addNewTask = (newTaskContent) => {
@@ -39,20 +38,6 @@
       }));
       
       render();
-   };
-
-   const checkIfAllDone = () => {
-      if(!tasksList || !tasksList.length) {
-         doneAllTasks = false;
-      } else {
-         doneAllTasks = true;
-      }
-      
-      tasksList.forEach((task) => {
-         if(!task.done) {
-            doneAllTasks = false;
-         }
-      })
    };
 
    const toggleHideDoneTasks = () => {
@@ -106,18 +91,14 @@
                ${singleTask.done ? " ✔" : ""}
             </button>
             <div class="tasksList__itemContent tasksList__itemContent${singleTask.done ? "--done" : ""}">${singleTask.content}</div>
-            <button class="tasksList__button tasksList__button--remove js-remove">
-               <img src="images/deleteBin16.png" class="tasksList__removeIcon">
-            </button>
+            <button class="tasksList__button tasksList__button--remove js-remove">🗑</button>
          </li>`;
       }
 
       document.querySelector(".js-tasksList").innerHTML = taskListHTMLContent;
    };
 
-   const renderButtons = () => {
-      checkIfAllDone();
-      
+   const renderButtons = () => {      
       // tasksListIsEmpty ?
       const hideFilterButtons = () => {
          if (!tasksList || !tasksList.length) {
@@ -135,7 +116,7 @@
 
       filterButtonsHTMLContent += `
              <button class="section__filterButton js-hideAllDoneButton">${hideDoneTasks ? "Show done" : "Hide done"}</button>
-             <button class="section__filterButton ${doneAllTasks ? "section__filterButton--disabled" : ""} js-doneAllButton" ${doneAllTasks ? "disabled" : ""}>Mark all done</button>`;
+             <button class="section__filterButton js-doneAllButton" ${tasksList.every(({ done }) => done) ? "disabled" : ""}>Mark all done</button>`;
 
       document.querySelector(".js-filterButtons").innerHTML = filterButtonsHTMLContent;
    };
